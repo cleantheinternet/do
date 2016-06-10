@@ -1,0 +1,145 @@
+{% extends 'dashboard/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Create Campaign | sponsdo{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div id="index-banner" class="parallax-container">
+
+            <div class="section no-pad-bot">
+
+                <div class="container">
+
+                    <br><br>
+
+                    <a href="{% url 'main:index' %}"><h1 class="header center teal-text text-lighten-2"><img src="{% static 'img/logo.png' %}" width="200px"></h1></a>
+
+                    <div class="row center">
+
+                        <h5 class="header col s12 light"></h5>
+
+                    </div>
+
+                    <div class="row center">
+
+                        <a href="{% url 'dashboard:index' %}" id="download-button" class="btn waves-effect waves-light
+                         deep-orange darken-4"><i class="material-icons left">dashboard</i>Dashboard</a>
+
+                    </div>
+
+                    <br><br>
+
+
+                </div>
+
+            </div>
+
+            <div class="parallax"><img src="{% static 'img/background1.jpg' %}"></div>
+
+        </div>
+
+
+    <div class="container">
+
+        <div class="section">
+
+            <h3>Add campaign</h3><br>
+
+        <h5 class="blue-grey-text">All fields are required. If you don't want to write anything in specific field then type null in that field.</h5><br>
+
+            {% if error_message %}
+
+                <p><strong><i class="material-icons prefix">error</i>{{ error_message }}</strong></p>
+
+            {% endif %}
+
+            <div class="row">
+
+                <form method="post" action="{% url 'dashboard:create_campaign' %}">
+
+                    {% csrf_token %}
+
+
+                    <div class="input-field col s12 m8 l8">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <label for="icon-prefix">Name</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <i class="tiny material-icons">info_outline</i>Title of the campaign.
+                    </div>
+
+                    <div class="input-field col s12 m8 l8">
+                        <i class="material-icons prefix">info</i>
+                        <label for="icon-prefix">Description</label>
+                        {{ form.description }}
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <i class="tiny material-icons">info_outline</i>How should be campaign and its content. Your idea of campaign, basically.
+                    </div>
+
+                    <div class="input-field col s12 m8 l8">
+                        <i class="material-icons prefix">language</i>
+                        <label for="icon-prefix">Links</label>
+                        {{ form.links }}
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <i class="tiny material-icons">info_outline</i>Link of product's website/webpage. So that our
+                        content experts get to know about product as they have to write campaign.
+                    </div>
+
+                    <div class="input-field col s12 m8 l8">
+                        <i class="material-icons prefix">info_outline</i>
+                        <label for="icon-prefix">Suggestion</label>
+                        {{ form.suggestion }}
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <i class="tiny material-icons">info_outline</i>Any suggestions.
+                    </div>
+
+                    <div class="input-field col s12 m8 l8">
+                        <i class="material-icons prefix">code</i>
+                        <label for="icon-prefix">Views</label>
+                        {{ form.views }}
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <i class="tiny material-icons">info_outline</i>How many people you want to read article about your product is no of views. Cost of the campaign will derived by number of views.
+                    </div>
+
+                    <div class="input-field col s12 m8 l8">
+                        <i class="material-icons prefix">av_timer</i>
+                        <label for="icon-prefix">Duration</label>
+                        {{ form.duration }}
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <i class="tiny material-icons">info_outline</i>No of days campaign should run.
+                    </div>
+
+                    <div class="col s12 m9 l8">
+                        <button type="submit" id="download-button"
+                                class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">send</i>Proceed</button>
+                    </div>
+
+
+                </form>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,228 @@
+{% extends 'dashboard/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ user.username }}&#180;s Dashboard{% endblock %}
+
+{% block content %}
+
+
+    {% if user.first_name == 'Company' %}
+
+
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+
+                  <a href="{% url 'main:index' %}">  <h1 class="header center teal-text text-lighten-2"><img src="{% static 'img/logo.png' %}" width="200px"></h1></a>
+                    <h1>Currently we're open for publishers only. Launch date for companies is 13th June. Alhough till then you can create campaign.</h1>
+                    <h1 class="header center white-text">Welcome, {{ user.username }}</h1><br><br>
+                    <div class="row center">
+                        <h5 class="header col s12 light"></h5>
+                    </div>
+                    <div class="row center">
+                        <a href="{% url 'dashboard:create_campaign' %}" id="download-button"
+                           class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">launch</i>Create New Campaign</a>
+
+                        <a href="{% url 'dashboard:logout_user' %}" id="download-button"
+                           class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">lock_open</i>Logout</a>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+            <div class="parallax"><img src="{% static 'img/companies.jpg' %}"></div>
+        </div>
+
+
+        <div class="container">
+            <div class="section">
+            <div class="row">
+
+                {% if campaigns %}
+
+                    {%  for campaign in campaigns %}
+
+                        <div class="col s12 m6 l4">
+
+                          <div class="card">
+                              <div class="card-image waves-effect waves-block waves-light">
+                                  <img class="activator" src="{% static 'img/companies tile.jpg' %}"> </div>
+                              <div class="card-content">
+                                  <span class="card-title activator grey-text text-darken-4">
+                                      <a href="{% url 'dashboard:ccampaign' campaign.id %}">{{ campaign.name }}</a>
+                                          <i class="material-icons right">more_vert</i>
+                                  </span>
+                                  <p><a href="{% url 'dashboard:ccampaign' campaign.id %}" class="blue-text">Go to Campaign</a></p>
+                              </div>
+                              <div class="card-reveal">
+                                  <span class="card-title grey-text text-darken-4">{{ campaign.name }}
+                                      <i class="material-icons right">close</i>
+                                  </span>
+                                  <p>
+                                      <a href="{% url 'dashboard:ccampaign' campaign.id %}" class="blue-text">Go to Campaign</a>
+                                      <br>
+                                      {{ campaign.description }}
+                                  </p>
+                              </div>
+                          </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                {% else %}
+
+                    <div class="col s12 m6 l4">
+
+                    <div class="card">
+                              <div class="card-image waves-effect waves-block waves-light">
+                                  <img class="activator" src="{% static 'img/companies tile.jpg' %}"> </div>
+                              <div class="card-content">
+                                  <span class="card-title activator grey-text text-darken-4">
+                                      <a href="{% url 'dashboard:create_campaign' %}">Create new campaign</a>
+                                          <i class="material-icons right">more_vert</i>
+                                  </span>
+                                  <p><a href="{% url 'dashboard:create_campaign' %}">Create new campaign</a></p>
+                              </div>
+                              <div class="card-reveal">
+                                  <span class="card-title grey-text text-darken-4">
+                                      So what're you waiting for. Experience sponsdo.
+                                      <i class="material-icons right">close</i>
+                                  </span>
+                                  <p>
+                                      <a href="{% url 'dashboard:create_campaign' %}">Create new campaign</a><
+                                      <br>
+                                      So what're you waiting for. Experience sponsdo. Influential. Wider reach.
+                                      More engaging. Organic growth. Higher conversion.
+                                  </p>
+                              </div>
+                          </div>
+                    </div>
+
+
+
+                {% endif %}
+
+
+             </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+    {% else %}
+
+
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <a href="{% url 'main:index' %}"><h1 class="header center teal-text text-lighten-2"><img src="{% static 'img/logo.png' %}" width="200px"></h1></a>
+                    <h1 class="header center white-text">Welcome, {{ user.username }}</h1><br><br>
+                    <div class="row center">
+                        <h5 class="header col s12 light"></h5>
+                    </div>
+                    <div class="row center">
+                        <a href="{% url 'dashboard:finance' %}" id="download-button"
+                           class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">grade</i>Finance</a>
+
+                        <a href="{% url 'dashboard:logout_user' %}" id="download-button"
+                           class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">lock_open</i>Logout</a>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+            <div class="parallax"><img src="{% static 'img/publishers.jpg' %}"></div>
+        </div>
+
+
+        <div class="container">
+            <div class="section">
+            <div class="row">
+
+                {% if publishercampaigns %}
+
+                    {%  for publishercampaign in publishercampaigns %}
+                        <div class="col s12 m6 l4">
+
+                          <div class="card">
+                              <div class="card-image waves-effect waves-block waves-light">
+                                  <img class="activator" src="{% static 'img/publishers tile.jpg' %}"> </div>
+                              <div class="card-content">
+                                  <span class="card-title activator grey-text text-darken-4">
+                                      <a href="{% url 'dashboard:pcampaign' publishercampaign.id %}">{{ publishercampaign.name }}</a>
+                                          <i class="material-icons right">more_vert</i>
+                                  </span>
+                                  <p><a href="{% url 'dashboard:pcampaign' publishercampaign.id %}" class="blue-text">Go to Campaign</a></p>
+                              </div>
+                              <div class="card-reveal">
+                                  <span class="card-title grey-text text-darken-4">{{ publishercampaign.name }}
+                                      <i class="material-icons right">close</i>
+                                  </span>
+                                  <p>
+                                      <a href="{% url 'dashboard:pcampaign' publishercampaign.id %}" class="blue-text">Go to Campaign</a>
+                                      <br>
+                                      Amount : {{ publishercampaign.amount }}<br><br>
+                                      Progress : {{ publishercampaign.progress }}&#37;<br>
+                                      You've to put content on work in 24 hours after campaign has been awarded to you.
+                                      (Mail will be also sent to {{ user.email }})<br><br>
+                                      Duration : {{ publishercampaign.duration }}<br>
+                                      No of days content needs to remain on site/app.
+                                      After it sponsdo suggest you to remove content as you'll be not paid afterwards.
+                                  </p>
+                              </div>
+                          </div>
+                          </div>
+
+                    {% endfor %}
+
+
+                {% else %}
+
+                    <div class="col s12 m6 l4">
+
+                    <div class="card">
+                              <div class="card-image waves-effect waves-block waves-light">
+                                  <img class="activator" src="{% static 'img/publishers tile.jpg' %}"> </div>
+                              <div class="card-content">
+                                  <span class="card-title activator grey-text text-darken-4">
+                                      Keep checking your dashboard. You'll be awarded a campaign ASAP.
+                                          <i class="material-icons right">more_vert</i>
+                                  </span>
+                                  <p></p>
+                              </div>
+                              <div class="card-reveal">
+                                  <span class="card-title grey-text text-darken-4">
+
+                                      <i class="material-icons right">close</i>
+                                  </span>
+                                  <p>Keep checking your dashboard. You'll be awarded a campaign ASAP.
+                                      Our algorithm will award you cammpaign as soon as it found suitable campaign.
+                                  </p>
+                              </div>
+                          </div>
+                    </div>
+
+
+
+                {% endif %}
+
+
+             </div>
+            </div>
+        </div>
+
+
+    {% endif %}
+
+
+
+{% endblock %}

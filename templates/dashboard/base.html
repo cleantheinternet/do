@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- CSS  -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="icon" type="image/png" href="{% static 'img/icon.png' %}" />
+
+  <!--  Scripts-->
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+    <title>{% block title %} | sponsdo{% endblock %}</title>
+</head>
+<body>
+
+ {% block content %}
+
+{% endblock %}
+
+<footer class="page-footer indigo darken-3">
+     <div class="container">
+     </div>
+    <div class="indigo darken-4">
+     <div class="footer-copyright indigo darken-4">
+         <div class="container">
+             © 2016 Copyright SPONSDO LLC
+
+         </div>
+     </div>
+ </footer>
+
+</body>
+</html>
+
+
+
+
+
+

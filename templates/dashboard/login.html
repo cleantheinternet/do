@@ -1,0 +1,86 @@
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- CSS  -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="icon" type="image/png" href="{% static 'img/icon.png' %}" />
+
+  <!--  Scripts-->
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+</head>
+<title>Login to dashboard | sponsdo</title>
+
+
+<body>
+
+<div style="padding-top:15vh;">
+<div class="row">
+
+    <div class="col s12 m2 l2">
+        <p></p>
+    </div>
+
+    <div class="col s12 m3 l3">
+        <a href="{% url 'main:index' %}"><img src="{% static 'img/logo.png' %}" width="70%"></a>
+        <br><br>
+        <h3 class="white-text">Login to check your earnings, progress of running campaign, new awarded campaigns and to checkout</h3>
+    </div>
+
+    <div class="col s12 m2 l2">
+        <p></p>
+    </div>
+
+
+    <div class="col s12 m3 l3 white">
+        <br>
+
+        {% if error_message %}
+            <p><strong>{{ error_message }}</strong></p>
+        {% endif %}
+
+        <form action="{% url 'dashboard:login_user' %}" method="post" class="col s12">
+            {% csrf_token %}
+
+            <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">perm_identity</i>
+                <label for="id_username">Username</label>
+                <input id="id_username" name="username" type="text">
+            </div>
+
+            <div class="input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <label for="id_password">Password</label>
+                    <input id="id_password" name="password" type="password">
+            </div>
+
+            <div class="col s12">
+                <button type="submit" id="download-button"
+                        class="btn waves-effect waves-light deep-orange darken-4">
+                    <i class="material-icons prefix left">input</i>Login</button><br><br>
+            </div>
+            </div>
+
+        </form>
+
+    <p><br><br>Don't have an account? <a href="{% url 'dashboard:register' %}" class="blue-text">Register</a>.
+    <br><small>Forget password or having any problem? Mail at help@sponsdo.com</small></p>
+    </div>
+
+    <div class="col s12 m2 l2"><p></p></div>
+
+
+</div>
+</div>
+
+<div class="parallax"><img src="{% static 'img/background1.jpg' %}" </div>
+
+</body>

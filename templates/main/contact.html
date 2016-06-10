@@ -1,0 +1,55 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- CSS  -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+  <!--  Scripts-->
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+    <title>{% block title %} | sponsdo{% endblock %}</title>
+</head>
+<body>
+
+
+<form method="post" action="" class="col s6">
+    {% csrf_token %}
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">perm_identity</i>
+                                <input id="icon_prefix" type="text" class="validate" name="name">
+                                <label for="icon_prefix">Name</label>
+                                {{ form.name }}
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mail</i>
+                                <input id="icon_telephone" type="tel" class="validate" name="email">
+                                <label for="icon_telephone">Email</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="icon_prefix2" class="materialize-textarea" name="message"></textarea>
+                                <label for="icon_prefix2">Message/Query</label>
+                                {{ form.message }}
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light col s4 deep-orange darken-4" type="submit"
+                                name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+
+</form>
+
+
+
+</body>

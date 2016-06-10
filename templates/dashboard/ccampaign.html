@@ -1,0 +1,204 @@
+{% extends 'dashboard/base.html' %}
+
+{% load staticfiles %}
+
+
+{% block title %}{{ campaign.name }} | sponsdo{% endblock %}
+
+
+{% block content %}
+
+
+        <div id="index-banner" class="parallax-container">
+
+            <div class="section no-pad-bot">
+
+                <div class="container">
+
+                    <br><br>
+
+                    <a href="{% url 'main:index' %}"><h1 class="header center teal-text text-lighten-2"><img src="{% static 'img/logo.png' %}" width="200px"></h1><br><br></a>
+                    <h1 class="header center teal-text text-lighten-2">{{ campaign.name }}</h1>
+
+                    <div class="row center">
+
+                        <h5 class="header col s12 light"></h5>
+
+                    </div>
+
+                    <div class="row center">
+
+                        <a href="{% url 'dashboard:create_campaign' %}" id="download-button" class="btn
+                        waves-effect waves-light deep-orange darken-4"><i class="material-icons left">launch</i>
+                            Create New Campaign</a>
+
+                        <a href="{% url 'dashboard:index' %}" id="download-button" class="btn waves-effect waves-light
+                         deep-orange darken-4"><i class="material-icons left">dashboard</i>Dashboard</a>
+
+                        <a href="{% url 'dashboard:logout_user' %}" id="download-button"
+                           class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">lock_open</i>Logout</a>
+
+                    </div>
+
+                    <br><br>
+
+
+                </div>
+
+            </div>
+
+            <div class="parallax"><img src="{% static 'img/companies.jpg' %}"></div>
+
+        </div>
+
+
+
+        <div class="container">
+
+            <div class="section">
+
+                <div class="row">
+
+                    <div class="col s12 center">
+
+                        <h3><i class="mdi-content-send brown-text"></i></h3>
+
+                        <h4>
+
+                            <div class="w3-progress-container">
+
+                                <div id="myBar" class="w3-progressbar w3-green" style="width:0%">
+
+                                    <div id="mo" class="w3-center w3-text-white">{{ campaign.progress }}%</div>
+
+                                </div>
+
+                            </div>
+
+                            <br>
+
+                            <button class="w3-btn w3-dark-grey" onclick="move()"><i class="material-icons left">
+                                trending_up</i>Check progress</button>
+
+                            <br>Progress is updated daily.
+
+
+                            <script>
+
+                                function move() {
+
+                                    var elem = document.getElementById("myBar");
+
+                                    var width = 0;
+
+                                    var id = setInterval(frame, 1);
+
+                                    function frame() {
+
+                                        if (width >= {{ campaign.progress }}) {
+
+                                            clearInterval(id);
+
+                                        } else {
+
+                                            width++;
+
+                                            elem.style.width = width + '%';
+
+                                            document.getElementById("demo").innerHTML = width + '%';
+
+                                        }
+
+                                    }
+
+                                }
+
+                            </script>
+
+
+
+
+                        </h4>
+
+                        <ul class="collapsible popout" data-collapsible="accordion">
+
+                            <li>
+
+                                <div class="collapsiblfilter_dramae-header left-align"><i class="material-icons">label_outline</i>Name</div>
+
+                                <div class="collapsible-body left-align"><p>{{ campaign.name }}</p></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="collapsible-header left-align"><i class="material-icons">description</i>Description</div>
+
+                                <div class="collapsible-body left-align"><p>{{ campaign.description }}</p></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="collapsible-header left-align"><i class="material-icons">language</i>Links</div>
+
+                                <div class="collapsible-body left-align"><p>{{ campaign.links }}</p></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="collapsible-header left-align"><i class="material-icons">info_outline</i>Suggestion</div>
+
+                                <div class="collapsible-body left-align"><p>{{ campaign.suggestion }}</p></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="collapsible-header left-align"><i class="material-icons">code</i>Views</div>
+
+                                <div class="collapsible-body left-align"><p>Total no of pageviews {{ campaign.views }}</p></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="collapsible-header left-align"><i class="material-icons">av_timer</i>Duration</div>
+
+                                <div class="collapsible-body left-align"><p>Campaign to run {{ campaign.duration }} number of days</p></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="collapsible-header left-align"><i class="material-icons">today</i>Date</div>
+
+                                <div class="collapsible-body left-align"><p>{{ campaign.date }}, when you created campaign</p></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="collapsible-header left-align"><i class="material-icons">done</i>Amount</div>
+
+                                <div class="collapsible-body left-align"><p>{{ campaign.amount }}, amount you invested in this campaign</p></div>
+
+                            </li>
+
+                        </ul>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+{% endblock %}

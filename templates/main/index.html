@@ -1,0 +1,144 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Welcome to sponsdo{% endblock %}
+{% block content %}
+
+    <div id="index-banner" class="parallax-container" style="height: 100vh;">
+        {% include 'main/nav.html' %}
+        <div class="section no-pad-bot">
+            <div class="container" style="padding-top: 27vh">
+                <br><br>
+                <h1 class="header center white-text text-lighten-2">sponsdo.
+                    <style>
+                        .mySlides {display:none;}
+                    </style>
+
+
+                    <div style="max-width:400px; display:inline-block;" class="blue">
+
+                        <div class="mySlides">because ads suck.</div>
+                        <div class="mySlides">influential.</div>
+                        <div class="mySlides">adblock proof.</div>
+                        <div class="mySlides">future of ads.</div>
+                        <div class="mySlides">because ads are dying.</div>
+                        <div class="mySlides">immersive content.</div>
+
+
+                    </div>
+
+                    <script>
+                        var slideIndex = 0;
+                        carousel();
+
+                        function carousel() {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            slideIndex++;
+                            if (slideIndex > x.length) {slideIndex = 1}
+                            x[slideIndex-1].style.display = "block";
+                            setTimeout(carousel, 1500);
+                        }
+                    </script>
+                </h1>
+            </div>
+        </div>
+        <div class="parallax"><img src="{% static 'img/bg.jpg' %}" width="100%"></div>
+    </div>
+
+    <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h2 class="center indigo-text text-darken">Idea behind sponsdo</h2>
+          <p class="center-align light">Ads suck, because they don’t influence users much. Peoples don’t want to see ads,
+              that’s the main reason of ever rising popularity of ad blockers. This questions the future of ads.
+              But companies will need a medium by which they can influence peoples to use their products in future too.
+              Sponsdo don’t make user to click on some banner or any link on site/app instead they see specalised
+              content sponsoring brand/company on site only. So, sponsdo.</p>
+
+
+
+                    <style>
+                        .mySlide {display:none;}
+                    </style>
+
+
+                    <div style="display:inline-block;"
+
+                        <div class="mySlide"><img src="{% static 'img/what1.png' %}" width=50%"></div>
+                        <div class="mySlide"><img src="{% static 'img/what2.png' %}" width=50%"></div>
+                        <div class="mySlide"><img src="{% static 'img/what3.png' %}" width=30%"></div>
+                        <div class="mySlide"><img src="{% static 'img/what4.png' %}" width=30%"></div>
+
+
+                    </div>
+
+                    <script>
+                        var slideIndex = 0;
+                        carousel();
+
+                        function carousel() {
+                            var i;
+                            var x = document.getElementsByClassName("mySlide");
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            slideIndex++;
+                            if (slideIndex > x.length) {slideIndex = 1}
+                            x[slideIndex-1].style.display = "block";
+                            setTimeout(carousel, 2500);
+                        }
+                    </script>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+
+    <div class="grey lighten-4">
+    <div class="container">
+    <div class="section">
+
+
+        <div class="row">
+            <div class="col s6 m6 l6 center">
+                <a href="{% url 'main:publishers' %}"><img src="{% static 'img/publishers tile.jpg' %}" width="100%"></a>
+            </div>
+
+            <div class="col s6 m6 l6 center">
+                <a href="{% url 'main:companies' %}"><img src="{% static 'img/companies tile.jpg' %}" width="100%"></a>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+
+
+
+    <div class="grey lighten-3">
+        <div class="container">
+            <div class="row blue-grey-text">
+                <div class="col s6">
+                    <br>
+                    <h2>Have any query/suggestion or anything?</h2>
+                    <br>
+                    <h3>Shoot us and we'll contact you ASAP.</h3>
+                </div>
+                    {% include 'main/contact.html' %}
+                </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

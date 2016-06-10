@@ -1,0 +1,68 @@
+{% extends 'dashboard/base.html' %}
+
+{% load staticfiles %}
+
+
+{% block title %}{{ publishercampaign.name }}{% endblock %}
+
+
+{% block content %}
+
+
+
+        <div id="index-banner" class="parallax-container">
+
+            <div class="section no-pad-bot">
+
+                <div class="container">
+
+                    <br><br>
+
+                    <a href="{% url 'main:index' %}"><h1 class="header center teal-text text-lighten-2"><img src="{% static 'img/logo.png' %}" width="200px"></h1><br><br></a>
+                    <h1 class="header center teal-text text-lighten-2">{{ publishercampaign.name }}</h1>
+
+                    <div class="row center">
+
+                        <h5 class="header col s12 light"></h5>
+
+                    </div>
+
+                    <div class="row center">
+
+                        <a href="{% url 'dashboard:index' %}" id="download-button" class="btn waves-effect waves-light
+                        deep-orange darken-4"><i class="material-icons left">dashboard</i>Dashboard</a>
+
+                        <a href="{% url 'dashboard:finance' %}" id="download-button"
+                           class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">grade</i>Finance</a>
+
+                        <a href="{% url 'dashboard:logout_user' %}" id="download-button"
+                           class="btn waves-effect waves-light deep-orange darken-4">
+                            <i class="material-icons left">lock_open</i>Logout</a>
+
+                    </div>
+
+                    <br><br>
+
+
+                </div>
+
+            </div>
+
+            <div class="parallax"><img src="{% static 'img/publishers.jpg' %}"></div>
+
+        </div>
+
+
+
+        <div class="container">
+
+            <div class="section">
+
+                <h3 class="blue-grey-text">Your current balance is ${{ money.balance }}.<h3>
+                    <h4>Currently checkout option is not open. As you have less than $25(Minimum checkout is $25).</h4>
+            </div>
+        </div>
+
+
+{% endblock %}

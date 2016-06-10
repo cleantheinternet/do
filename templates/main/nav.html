@@ -1,0 +1,58 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- CSS  -->
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+  <!--  Scripts-->
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+    <title>{% block title %} | sponsdo{% endblock %}</title>
+</head>
+<body>
+<style>
+    nav ul li a{
+        color: #ffab91;
+        font-size: large;
+    }
+</style>
+
+
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper indigo darken-4">
+            <a href="{%  url 'main:index' %}" class="brand-logo"><img src="{% static 'img/logo.png' %}"
+                                                                      style="width:200px; padding-top:10px; padding-left:7px"></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse white">
+                <script>$(".button-collapse").sideNav();</script>
+                <i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'main:index' %}" class="waves-effect waves-light btn-small">Home</a></li>
+                <li><a href="{% url 'main:publishers' %}" class="waves-effect waves-light btn-small">Publishers</a></li>
+                <li><a href="{% url 'main:companies' %}" class="waves-effect waves-light btn-small">Companies</a></li>
+                <li><a href="{% url 'main:about' %}" class="waves-effect waves-light btn-small">About Us</a></li>
+                <li><a href="{% url 'dashboard:index' %}" class="waves-effect waves-light btn indigo white-text">Dashboard/Login</a></li>
+                <li><a href="{% url 'dashboard:register' %}" class="waves-effect waves-light btn indigo white-text">Get started!</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="{% url 'main:index' %}" class="waves-effect waves-light btn-small">Home</a></li>
+                <li><a href="{% url 'main:publishers' %}" class="waves-effect waves-light btn-small">Publishers</a></li>
+                <li><a href="{% url 'main:companies' %}" class="waves-effect waves-light btn-small">Companies</a></li>
+                <li><a href="{% url 'main:about' %}" class="waves-effect waves-light btn-small">About Us</a></li>
+                <li><a href="{% url 'dashboard:index' %}" class="waves-effect waves-light btn indigo white-text">Dashboard/Login</a></li>
+                <li><a href="{% url 'dashboard:register' %}" class="waves-effect waves-light btn indigo white-text">Get started!</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+</body>

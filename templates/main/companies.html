@@ -1,0 +1,198 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Companies{% endblock %}
+{% block content %}
+
+
+        {% include 'main/nav.html' %}
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container" style="padding-top: 17vh">
+                <br><br>
+                <h1 class="header center white-text text-lighten-2">sponsdo.
+                    <style>
+                        .mySlides {display:none;}
+                    </style>
+
+
+                    <div style="max-width:400px; display:inline-block;" class="blue">
+
+                        <div class="mySlides">influential.</div>
+                        <div class="mySlides">immersive content.</div>
+                        <div class="mySlides">cost effective.</div>
+                        <div class="mySlides">real conversion.</div>
+                        <div class="mySlides">engaging.</div>
+
+                    </div>
+
+                    <script>
+                        var slideIndex = 0;
+                        carousel();
+
+                        function carousel() {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            slideIndex++;
+                            if (slideIndex > x.length) {slideIndex = 1}
+                            x[slideIndex-1].style.display = "block";
+                            setTimeout(carousel, 1500);
+                        }
+                    </script>
+                </h1>
+            </div>
+        </div>
+        <div class="parallax"><img src="{% static 'img/companies.jpg' %}"></div>
+    </div>
+
+
+
+    <div class="container">
+    <div class="section">
+        <h1 class="center indigo-text text-darken">How sponsdo works?</h1>
+        <br>
+        <div class="row">
+            <div class="col s12 m4 l4 center">
+                <img src="{% static 'img/campaign.png' %}" width="70%">
+                <h3 class="deep-orange-text text-darken-4">Start a new Campaign</h3>
+                <h5>Campaign is basically an article/blog which tells about the company or product with text, images,
+                    videos etc that communicates desired message. It includes no of views you want, details about
+                    your product etc.</h5>
+            </div>
+
+            <div class="col s12 m4 l4 center">
+                <img src="{% static 'img/content.png' %}" width="70%">
+                <h3 class="deep-orange-text text-darken-4">Content prepared by experts</h3>
+                <h5>Content of sponsored blog will be handled by the experts as per the details provided.
+                    Details would include link to the website of product/company, text/images/videos
+                    provided during creating campaign.</h5>
+            </div>
+
+            <div class="col s12 m4 l4 center">
+                <img src="{% static 'img/result.png' %}" width="70%">
+                <h3 class="deep-orange-text text-darken-4">Get fabolous results</h3>
+                <h5>We assure that ad campaign’s results into running more campaigns. And this cycle will keep flowing.</h5>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    </div>
+
+
+
+    <div class="grey lighten-4">
+    <div class="container">
+    <div class="section">
+        <h1 class="center indigo-text text-darken">Why sponsdo?</h1>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Influential</h3>
+                <h5>It’s fact that people don’t like ads but what if site’s contains some blog/article that says
+                    about the product/brand which the brand or company wanted to communicate through ads in an
+                    interesting storytelling way?
+                    etc.</h5>
+            </div>
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/influential.jpg' %}" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/cost.jpg' %}" width="100%">
+            </div>
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Upto 90% less cost</h3>
+                <h5>Generally user click on the ad whcih redirect him/her to product's page, it is way simpler
+                    owing to the fact that the Customer is actually getting to know about the product through
+                    the sponsored content itself. And as compared to traditional ads our costs are
+                    80-90% cheaper.</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Organic growth + Higher conversion</h3>
+                <h5>People read articles naturally, and it’s more trustworthy. So sponsdo helps businesses to
+                    achieve higher conversions.</h5>
+            </div>
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/growth.png' %}" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/adblock.jpg' %}" width="100%">
+            </div>
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">AdBlock: Alarming Stats</h3>
+                <h5>Stats show that penetration of Adblock will be 50% by 2017 in EU and by 2018 in the US.Basically
+                    AdBlockers will be eating your half of potential customers. It is alarming! But since Sponsdo
+                    doesn't offer advertisements, so adblockers can't block content of publisher's website.</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Wider reach + more engaging</h3>
+                <h5>People read about the product/company on website only where they can comment, share etc. on
+                    article that leads to more engagement. Additionally it’s adblock proof so every user get to
+                    know about the product/company.</h5>
+            </div>
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/reach.jpg' %}" width="100%">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/nextgen.jpg' %}" width="100%">
+            </div>
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Next generation</h3>
+                <h5>World is changing fast, very fast. But ads hasn’t experienced innovation since long time.
+                    So here comes sponsdo.</h5>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <div class="grey lighten-3">
+        <div class="container">
+            <div class="row blue-grey-text">
+                <div class="col s6">
+                    <br>
+                    <h3>Download Companies brochure</h3>
+                    <a href="{% static 'file/Companies Brochure.pdf' %}" target="_blank" class="waves-effect waves-light btn deep-orange darken-4"><i class="material-icons left">play_for_work</i>Download</a>
+                    <br><br>
+                    <h3>Have any query/suggestion or anything?<br>Shoot us and we'll contact you ASAP.</h3>
+                </div>
+                    {% include 'main/contact.html' %}
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

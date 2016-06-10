@@ -1,0 +1,179 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Publishers{% endblock %}
+{% block content %}
+
+
+        {% include 'main/nav.html' %}
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container" style="padding-top: 17vh">
+                <br><br>
+                <h1 class="header center white-text text-lighten-2">sponsdo.
+                    <style>
+                        .mySlides {display:none;}
+                    </style>
+
+
+                    <div style="max-width:400px; display:inline-block;"  class="blue">
+
+                        <div class="mySlides">more revenue.</div>
+                        <div class="mySlides">immersive content.</div>
+                        <div class="mySlides">adblock proof.</div>
+                        <div class="mySlides">engaging.</div>
+
+                    </div>
+
+                    <script>
+                        var slideIndex = 0;
+                        carousel();
+
+                        function carousel() {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            slideIndex++;
+                            if (slideIndex > x.length) {slideIndex = 1}
+                            x[slideIndex-1].style.display = "block";
+                            setTimeout(carousel, 1500);
+                        }
+                    </script>
+                </h1>
+            </div>
+        </div>
+        <div class="parallax"><img src="{% static 'img/publishers.jpg' %}"></div>
+    </div>
+
+
+
+    <div class="container">
+    <div class="section">
+        <h1 class="center indigo-text text-darken">How sponsdo works?</h1>
+        <br>
+        <div class="row">
+            <div class="col s12 m4 l4 center">
+                <img src="{% static 'img/publishercampaign.png' %}" width="70%">
+                <h3 class="deep-orange-text text-darken-4">Check the awarded campaigns</h3>
+                <h5>Login to check the awarded campaigns. Campaigns are basically article/blog which include
+                    sponsored content of any company or it’s products.</h5>
+            </div>
+
+            <div class="col s12 m4 l4 center">
+                <img src="{% static 'img/content.png' %}" width="70%">
+                <h3 class="deep-orange-text text-darken-4">Put the content on work</h3>
+                <h5>Publish content of awarded campaign on website as a blog, just like you publish other
+                    blogs/articles on website/app.</h5>
+            </div>
+
+            <div class="col s12 m4 l4 center">
+                <img src="{% static 'img/revenue.jpg' %}" width="70%">
+                <h3 class="deep-orange-text text-darken-4">Get paid</h3>
+                <h5>See earnings grow and checkout as low as $50 in just 7 working days.</h5>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    </div>
+
+
+
+    <div class="grey lighten-4">
+    <div class="container">
+    <div class="section">
+        <h1 class="center indigo-text text-darken">Why sponsdo?</h1>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Increase your revenue by 2X</h3>
+                <h5>Sponsdo gives the opportunity to earn more in addition to existing ad networks such as adsense
+                    etc.</h5>
+            </div>
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/growth.png' %}" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/adblock.jpg' %}" width="100%">
+            </div>
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Adblock proof</h3>
+                <h5>Stats show that peneteration of adblock will be 50% by 2017 in EU and by 2018 in US. Basically
+                    adblockers will be eating your half of revenue. It's alarming! But sponsdo don’t offer ads, so
+                    let’s troll adblockers ;-)</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Engage user + No unwanted ads</h3>
+                <h5>Sponsdo make ads sought from being unsought. Users like quality content and that’s we’ll provide,
+                    just by customising it as per the needs of companies and user-centric.
+                    This will also keep web traffic intact.</h5>
+            </div>
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/engage.jpg' %}" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/integeration.jpg' %}" width="100%">
+            </div>
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Easy integration</h3>
+                <h5>It’s child’s play. Just put content of awarded campaign on the website/app just like it is
+                    posted as a blog on website.</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6 l6 center">
+                <h3 class="deep-orange-text text-darken-4">Next generation</h3>
+                <h5>World is changing fast, very fast. But ads hasn’t experienced innovation since long time.
+                    So here comes sponsdo.</h5>
+            </div>
+            <div class="col s12 m6 l6 center">
+                <img src="{% static 'img/nextgen.jpg' %}" width="100%">
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <div class="grey lighten-3">
+        <div class="container">
+            <div class="row blue-grey-text">
+                <div class="col s6">
+                    <br>
+                    <h3>Download Companies brochure</h3>
+                    <a href="{% static 'file/Publishers Brochure.pdf' %}" target="_blank" class="waves-effect waves-light btn deep-orange darken-4"><i class="material-icons left">play_for_work</i>Download</a>
+                    <br><br>
+                    <h3>Have any query/suggestion or anything?<br>Shoot us and we'll contact you ASAP.</h3>
+                </div>
+                    {% include 'main/contact.html' %}
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}

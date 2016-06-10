@@ -1,0 +1,166 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block title %}About{% endblock %}
+{% block content %}
+
+
+        {% include 'main/nav.html' %}
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container" style="padding-top: 17vh">
+                <br><br>
+                <h1 class="header center white-text text-lighten-2">sponsdo.
+                    <style>
+                        .mySlides {display:none;}
+                    </style>
+
+
+                    <div style="max-width:400px; display:inline-block;" class="blue">
+
+                        <div class="mySlides">passion.</div>
+                        <div class="mySlides">disruptive.</div>
+                        <div class="mySlides">hard work.</div>
+                        <div class="mySlides">start-up.</div>
+
+                    </div>
+
+                    <script>
+                        var slideIndex = 0;
+                        carousel();
+
+                        function carousel() {
+                            var i;
+                            var x = document.getElementsByClassName("mySlides");
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            slideIndex++;
+                            if (slideIndex > x.length) {slideIndex = 1}
+                            x[slideIndex-1].style.display = "block";
+                            setTimeout(carousel, 1500);
+                        }
+                    </script>
+                </h1>
+            </div>
+        </div>
+        <div class="parallax"><img src="{% static 'img/about.jpg' %}"></div>
+    </div>
+
+
+    <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h1 class="center indigo-text text-darken">sponsdo.</h1>
+          <p class="center-align light">Sponsdo is build with aim to build internet cleaner for users, to provide
+              publishers much better way to earn and to provide companies way better medium to market their product.
+              As we can see in the world of Internet today, the main revenue for the websites today are the
+              advertisements. They are mostly in the form of flash Based banner, animation and popups through service
+              providers like AdSense etc. As approximately a decade of such revenue generation method has about
+              ended, we now are at a path of new revenue method which on changing to as the primary mode of marketing,
+              would actually not prove to be irritating and interrupting but actually prove to be a much better way
+              effective way to market the product. So, come partner with Sponsdo, the new innovative way which is
+              going to be the future of advertising with your clientele and could give internet a clean look without
+              the disturbing and flashy pop-ups we are all tired of!</p>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+
+    <div class="grey lighten-4">
+    <div class="container">
+    <div class="section">
+
+
+        <h1 class="center indigo-text text-darken">Passion. Dream. Team. </h1>
+        <br>
+        <div class="row">
+            <div class="col s6 m3 l3 center">
+                <img src="{% static 'img/anshul.jpg' %}" width="100%">
+                <h3 class="blue-grey-text">Anshul Kharb</h3>
+                <h4>Tech.</h4>
+                <h6>His second start-up. IIT KGP.<br>anshul@sponsdo.com</h6>
+            </div>
+
+            <div class="col s6 m3 l3 center">
+                <img src="{% static 'img/gaurav.jpg' %}" width="100%">
+                <h3 class="blue-grey-text">Gaurav Kumar</h3>
+                <h4>Marketing.</h4>
+                <h6>Phd from IIT KGP. IIFT. And what not.<br>gaurav@sponsdo.com</h6>
+            </div>
+
+            <div class="col s6 m3 l3 center">
+                <img src="{% static 'img/gurmeet.jpg' %}" width="100%">
+                <h3 class="blue-grey-text">Gurmeet Ahuja</h3>
+                <h4>Content.</h4>
+                <h6>Knows marketing industry and loves to write. IIT KGP.<br>gurmeet@sponsdo.com</h6>
+            </div>
+
+            <div class="col s6 m3 l3 center">
+                <img src="{% static 'img/arvind.jpg' %}" width="100%">
+                <h3 class="blue-grey-text">Arvind Srivastav</h3>
+                <h4>Business development.</h4>
+                <h6>Hard worker. Doer. IIT KGP.<br>arvind@sponsdo.com</h6>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+
+    <div class="grey lighten-3">
+    <div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m4 l4 center">
+                <i class="medium material-icons prefix">location_on</i>
+                <h5>IIT Kharagpur<br>W.B. India - 721302</h5>
+            </div>
+
+            <div class="col s12 m4 l4 center">
+                <i class="medium material-icons prefix">mail</i>
+                <h5>contact@sponsdo.com</h5>
+            </div>
+
+            <div class="col s12 m4 l4 center">
+                <i class="medium material-icons prefix">call</i>
+                <h5>+91 7076 607317</h5>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+
+
+    <div class="grey lighten-2">
+        <div class="container">
+            <div class="row blue-grey-text">
+                <div class="col s6">
+                    <br>
+                    <h2>Have any query/suggestion or anything?</h2>
+                    <br>
+                    <h3>Shoot us and we'll contact you ASAP.</h3>
+                </div>
+                    {% include 'main/contact.html' %}
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
